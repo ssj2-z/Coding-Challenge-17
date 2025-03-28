@@ -33,6 +33,9 @@ class Customer {
         return client ? client.getTotalSpent() : 0;
       }
     }
+    
+console.log(`Sales rep's clients:`, salesRep.clients.map(client => client.name));
+console.log(`Total spent by John Wright: $${salesRep.getClientTotal('John Wright')}`);
 
     // Task 3 Adding 'VIP' customers
     class VIPCustomer extends Customer {
