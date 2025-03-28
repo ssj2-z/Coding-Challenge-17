@@ -33,3 +33,23 @@ class Customer {
         return client ? client.getTotalSpent() : 0;
       }
     }
+
+    // Task 3 Adding 'VIP' customers
+    class VIPCustomer extends Customer {
+        constructor(name, email, vipLevel) {
+          super(name, email);
+          this.vipLevel = vipLevel;
+        }
+      
+        // Adding rewards point to customers
+        getTotalSpent() {
+          const total = super.getTotalSpent();
+          return total + (total * 0.1); // Add loyalty bonus
+        }
+      }
+
+      const vipCustomer = new VIPCustomer('Tim Watson', 'TimW@aol.com', 'Gold');
+vipCustomer.addPurchase(500);
+vipCustomer.addPurchase(300);
+
+console.log(`VIP Customer's total spent with bonus: $${vipCustomer.getTotalSpent()}`);
