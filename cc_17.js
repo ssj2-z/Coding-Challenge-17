@@ -15,6 +15,12 @@ class Customer {
     }
   }
 
+  const customer = new Customer('John Wright', 'JWright@aol.com');
+  customer.addPurchase(100);
+  customer.addPurchase(50);
+  
+  console.log(`${customer.name}'s total spent: $${customer.getTotalSpent()}`);
+
   // Task 2 Sales Class
   class SalesRep {
     const(name) {
@@ -51,7 +57,7 @@ console.log(`Total spent by John Wright: $${salesRep.getClientTotal('John Wright
         }
       }
 
-      const vipCustomer = new VIPCustomer('Tim Watson', 'TimW@aol.com', 'Gold');
+const vipCustomer = new VIPCustomer('Tim Watson', 'TimW@aol.com', 'Gold');
 vipCustomer.addPurchase(500);
 vipCustomer.addPurchase(300);
 
