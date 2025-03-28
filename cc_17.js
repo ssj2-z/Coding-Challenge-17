@@ -56,3 +56,19 @@ vipCustomer.addPurchase(500);
 vipCustomer.addPurchase(300);
 
 console.log(`VIP Customer's total spent with bonus: $${vipCustomer.getTotalSpent()}`);
+
+// Task 4: Reporting platform
+// Calculating revenue
+const totalRevenue = salesRep.clients.reduce((total, client) => total + client.getTotalSpent(), 0);
+
+const highSpendingCustomers = salesRep.clients.filter(client => client.getTotalSpent() > 500);
+
+const customerSummary = salesRep.clients.map(client => ({
+  name: client.name,
+  totalSpent: client.getTotalSpent()
+}));
+
+// Log results
+console.log('Total revenue: $', totalRevenue);
+console.log('High-spending customers: ', highSpendingCustomers.map(client => client.name));
+console.log('Customer summary: ', customerSummary);
